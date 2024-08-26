@@ -15,3 +15,89 @@
 .navbartop {
   font-family: "Roboto Condensed", sans-serif;
 }
+
+.gridlines {
+  background-size: 16px 16px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0H15V15H0V16H16V0Z' fill='%23C0C5CE4C'/%3E%3C/svg%3E");
+}
+
+
+.graph-paper-bg {
+  position: relative;
+  background-color: #e6f4e1; /* Pale greenish background */
+  background-image: 
+    linear-gradient(to bottom, rgba(191,219,254,.05) 0%, rgba(239,246,255,.1) 100%),
+    linear-gradient(to right, rgba(191,219,254,.05) 0%, rgba(239,246,255,.1) 100%),
+    linear-gradient(to bottom, #cfe7d4 1px, transparent 1px),
+    linear-gradient(to right, #cfe7d4 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  border-width: 1px;
+  border-color: rgba(191,219,254,.8);
+  border-style: solid;
+  height: 100%;
+}
+
+.graph-paper-bg-dark {
+  background-color: #b0d0b0; /* Darker shade of pale green */
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px), 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/*.tape {
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  border-width: 1px;
+  border-color: rgba(191,219,254,.8);
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: rgba(191,219,254,.05) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(191,219,254,0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgba(239,246,255,.1) var(--tw-gradient-to-position);
+}*/
+
+.bulletin-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.bulletin-container .bulletin {
+  flex: 1 1 30%; /* Makes all bulletins the same width, but allows height to vary */
+  max-width: 1000px; /* Ensure max width */
+  min-width: 350px; /* Ensure min width */
+}
+
+
+.tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /*width: 60px;*/
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.bulletin {
+  position: relative;
+  background-color: #a8c4ab; /* Darker shade of green */
+  background-image: linear-gradient(#c3e6c7 1px, transparent 1px), linear-gradient(to right, #c3e6c7 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-width: 2rem;
+  border: 2px solid #b4d4bd; /* Green border around the bulletin */
+  margin: 1rem;
+}
+
+.content {
+  color: #1a3c34; /* Darker text color */
+}

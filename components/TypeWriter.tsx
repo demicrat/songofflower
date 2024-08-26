@@ -4,7 +4,7 @@ import styles from '@/components/componentstyles/TypewriterDemi.module.css'; // 
 
 const words = [
   { text: 'Harker JCL.', color: 'text-green-400' },
-  { text: 'Latin Community.', color: 'text-amber-500' },
+  { text: 'Latin Community.', color: 'text-fuchsia-500' },
   { text: 'Passionate Learners.', color: 'text-teal-400' },
   { text: 'Academic Excellence.', color: 'text-blue-500' }
 ];
