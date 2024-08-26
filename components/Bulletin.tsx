@@ -3,11 +3,11 @@ import '../app/globals.css';
 
 interface BulletinProps {
   title: string;
-  byline: string;
-  content: string; // This will be the main content of the bulletin
+  byline?: string;
+  content?: string; // This will be the main content of the bulletin
 }
 
-const Bulletin: React.FC<BulletinProps> = ({ title, byline, content }) => {
+const Bulletin: React.FC<BulletinProps> = ({ title, byline='no one', content="N/A" }) => {
   return (
     <div className="bulletin">
       <div className="tape w-4/12"></div>
