@@ -3,6 +3,7 @@ import Navbar from '@/components/NavBar';
 import TypeWriter from '@/components/TypeWriter';
 import BulletinBoard from '@/components/BulletinBoard';
 import UpcomingEvents from '@/components/UpcomingEvents';
+import BottomNav from '@/components/BottomNav';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       </div>
       <BulletinBoard />
       <UpcomingEvents />
+      <BottomNav />
     </div>
   );
 }
