@@ -8,8 +8,6 @@ import BottomNav from '@/components/BottomNav';
 export default function Home() {
   return (
     <div className="bg-green-50 min-h-screen">
-      <Banner />
-      <Navbar />
       <div className="mt-40 ml-40 text-7xl mb-40">
         <TypeWriter />
         <p className="text-xl text-gray-700 w-7/12 mt-8">
@@ -18,7 +16,6 @@ export default function Home() {
       </div>
       <BulletinBoard />
       <UpcomingEvents />
-      <BottomNav />
     </div>
   );
 }
