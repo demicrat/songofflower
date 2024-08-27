@@ -17,7 +17,7 @@ const UpcomingEventListCalendar: React.FC = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('/api/events'); // Fetching events from the API
+        const response = await fetch('/api/events?filter=upcoming'); // Fetching events from the API
         const data = await response.json();
         
         // Process the data to extract the relevant information

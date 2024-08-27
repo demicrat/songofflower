@@ -1,12 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
-
-interface Event {
-  summary: string;
-  start: { dateTime?: string; date?: string };
-  end: { dateTime?: string; date?: string };
-}
+import { Event } from '@/types/Event'
 
 interface MonthlyCalendarProps {
   onEventClick: (event: Event) => void;
@@ -55,11 +50,11 @@ const MonthlyCalendar: React.FC<MonthlyCalendarProps> = ({ onEventClick }) => {
   return (
     <div className="p-4 bg-green-400 text-white rounded-lg">
       <div className="flex justify-between mb-4">
-        <button onClick={prevMonth} className="bg-gray-700 px-4 py-2 rounded">
+        <button onClick={prevMonth} className="hover:opacity-80 duration duration-300 bg-gray-700 px-4 py-2 rounded">
           Previous
         </button>
         <h2 className="text-xl font-bold">{currentMonth.format('MMMM YYYY')}</h2>
-        <button onClick={nextMonth} className="bg-gray-700 px-4 py-2 rounded">
+        <button onClick={nextMonth} className="hover:opacity-80 duration duration-300 bg-gray-700 px-4 py-2 rounded">
           Next
         </button>
       </div>
@@ -84,7 +79,7 @@ const MonthlyCalendar: React.FC<MonthlyCalendarProps> = ({ onEventClick }) => {
               <div className="text-xs mt-1 space-y-1">
                 {events
                   .filter((event) =>
-                    dayjs(event.start.dateTime || event.start.date).isSame(date, 'day')
+                    dayjs(event.start.dateTime).isSame(date, 'day')
                   )
                   .map((event, index) => (
                     <div

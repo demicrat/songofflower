@@ -1,11 +1,25 @@
-import { NextResponse } from 'next/server';
-import { listAllEvents } from '@/lib/calendarUtils';
+import { NextRequest, NextResponse } from 'next/server';
+import { listAllEvents, listUpcomingEvents } from '@/lib/calendarUtils';
 
-export async function GET() {
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const filter = searchParams.get('filter'); // Check if a 'filter' query parameter is present
+
   try {
-    const calendarId = '83d539c813707464f54faa7ea72888eeade8c869959f3fca5b92e11a68d6b101@group.calendar.google.com';
+    const calendarId = process.env.GOOGLE_CALENDAR_ID || '';
+
+    if (!calendarId) {
+      throw new Error('Calendar ID is not defined');
+    }
+
+    if (filter === 'upcoming') {
+      const events = await listUpcomingEvents(calendarId);
+      return NextResponse.json(events);
+    }
+
+    // Default to returning all events if no 'filter' is specified
     const events = await listAllEvents(calendarId);
-    console.log("hello" + events);
     return NextResponse.json(events);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 });

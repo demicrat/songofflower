@@ -2,14 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import MonthlyCalendar from '@/components/MonthlyCalendar';
 import EventModal from '@/components/EventModal';
-
-interface Event {
-  summary: string;
-  start: { dateTime: string };
-  end: { dateTime: string };
-  location: string;
-  description: string;
-}
+import { Event } from '@/types/Event';
 
 const CalendarPage: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -81,7 +74,7 @@ const CalendarPage: React.FC = () => {
       <div className="m-20">
         <MonthlyCalendar onEventClick={handleEventClick} />
       </div>
-      <div className="mt-12 pl-40">
+      {/*<div className="mt-12 pl-40">
         {events.length > 0 ? (
           <ul>
             {events.map((event, index) => (
@@ -99,7 +92,7 @@ const CalendarPage: React.FC = () => {
         ) : (
           <p>No upcoming events found.</p>
         )}
-      </div>
+      </div>*/}
 
       {selectedEvent && (
         <EventModal event={selectedEvent} isOpen={isModalOpen} onClose={closeModal} />
