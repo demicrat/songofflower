@@ -77,12 +77,12 @@ const committeeHeads = [
   {
     photoUrl: '/27pascalq.jpg',
     name: 'Pascal Qin \'27',
-    position: 'Certamen Co-Captain)',
+    position: 'Certamen Co-Captain',
   },
   {
     photoUrl: '/27demiz.jpg',
     name: 'Demi Zheng \'27',
-    position: 'Certamen Co-Captain)',
+    position: 'Certamen Co-Captain',
   },
   {
     photoUrl: '/27leoz.jpg',
