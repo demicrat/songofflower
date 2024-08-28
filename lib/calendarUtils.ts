@@ -19,7 +19,6 @@ export async function listAllEvents(calendarId: string) {
     });
 
     const events = response.data.items;
-    console.log(events);
     return events || [];
   } catch (error) {
     console.error('Error fetching events:', error);
