@@ -31,7 +31,7 @@ const BottomNav: React.FC = () => {
         </div>
         <div className="mt-20 text-right text-sm text-green-300">
           <p>
-            Made with <span className="font-mono">&lt;/&gt;</span> by Demi Zheng.
+            Made with <span className="font-mono">&lt;/&gt;</span> by <Link href="https://demiz.vercel.app" className="hover:opacity-70 duration duration-300">Demi Zheng</Link>.
           </p>
           <p>
             Contact me at <a href="mailto:27demiz@students.harker.org" className="hover:underline">27demiz@students.harker.org</a> for website issues or just to say hi :)

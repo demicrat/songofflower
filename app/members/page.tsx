@@ -43,11 +43,13 @@ const advisors = [
     photoUrl: '/25felixc.jpg',
     name: 'Felix Chen \'25',
     position: 'Advisor',
+    description: 'Dr. Doe has been leading the department for over a decade with a focus on innovation and excellence. [these are placeholders]',
   },
   {
     photoUrl: '/27ameerar.jpg',
     name: 'Ameera Ramzan \'27',
     position: 'Advisor',
+    description: 'Dr. Doe has been leading the department for over a decade with a focus on innovation and excellence. [these are placeholders]',
   },
 ];
 
@@ -55,42 +57,42 @@ const committeeHeads = [
   {
     photoUrl: '/28shreyask.jpg',
     name: 'Shreyas Karnam \'28',
-    position: 'Nuntii (Communications/Publicity Officer)',
+    position: 'Publicity Co-Officer',
   },
   {
     photoUrl: '/28jacobc.jpg',
     name: 'Jacob Chung \'28',
-    position: 'Nuntii (Communications/Publicity Officer)',
+    position: 'Publicity Co-Officer',
   },
   {
     photoUrl: '/27raeannel.jpg',
     name: 'Raeanne Li \'27',
-    position: 'Artifices Maximae (co-chair of graphic arts)',
+    position: 'Co-Chair of Graphic Arts',
   },
   {
     photoUrl: '/27lilyp.jpg',
     name: 'Lily Peng \'27',
-    position: 'Artifices Maximae (co-chair of graphic arts)',
+    position: 'Co-Chair of Graphic Arts)',
   },
   {
     photoUrl: '/27pascalq.jpg',
     name: 'Pascal Qin \'27',
-    position: 'Praefecti Certamini (certamen co-captain)',
+    position: 'Certamen Co-Captain)',
   },
   {
     photoUrl: '/27demiz.jpg',
     name: 'Demi Zheng \'27',
-    position: 'Praefecti Certamini (certamen co-captain)',
+    position: 'Certamen Co-Captain)',
   },
   {
     photoUrl: '/27leoz.jpg',
     name: 'Leo Zhang \'27',
-    position: 'Machinatores Maximi (co-chief engineer)',
+    position: 'Co-Chief Engineer (chariot/catapult)',
   },
   {
     photoUrl: '/27shamikk.jpg',
     name: 'Shamik Khowala \'27',
-    position: 'Machinatores Maximi (co-chief engineer)',
+    position: 'Co-Chief Engineer (chariot/catapult)',
   },
   // Add other committee heads here...
 ];
@@ -99,8 +101,8 @@ export default function Home() {
   return (
     <div>
       <MembersPageBanner />
-      <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Faculty</h1>
-      <div className="flex justify-center gap-8 mx-20 mb-24">
+      <h1 className="text-5xl mt-24 text-gray-800 flex-wrap pb-10 text-center font-bold">Faculty</h1>
+      <div className="flex justify-center gap-8 mb-24">
         {faculty.map((member, index) => (
           <MemberCard 
             key={index}
@@ -112,9 +114,22 @@ export default function Home() {
         ))}
       </div>
 
-      <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Co-Presidents</h1>
-      <div className="flex justify-center gap-8 mx-20 mb-24">
+      <div className="flex flex-row justify-center gap-72 ">
+        <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Co-Presidents</h1>
+        <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Advisors</h1>
+      </div>
+      <div className="flex justify-center flex-wrap gap-8 mx-20 mb-24">
         {coPresidents.map((member, index) => (
+          <MemberCard 
+            key={index}
+            photoUrl={member.photoUrl}
+            name={member.name}
+            position={member.position}
+            description={member.description || ''}
+          />
+        ))}
+
+        {advisors.map((member, index) => (
           <MemberCard 
             key={index}
             photoUrl={member.photoUrl}
@@ -125,16 +140,8 @@ export default function Home() {
         ))}
       </div>
 
-      <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Advisors</h1>
       <div className="flex justify-center gap-8 mx-20 mb-24">
-        {advisors.map((member, index) => (
-          <MemberCard 
-            key={index}
-            photoUrl={member.photoUrl}
-            name={member.name}
-            position={member.position}
-          />
-        ))}
+        
       </div>
 
       <h1 className="text-5xl mt-24 text-gray-800 pb-10 text-center font-bold">Committee Heads</h1>
