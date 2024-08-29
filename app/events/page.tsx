@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MonthlyCalendar from '@/components/MonthlyCalendar';
 import EventModal from '@/components/EventModal';
 import { Event } from '@/types/Event';
+import MeetingMinutes from '@/components/MeetingMinutes';
 
 const CalendarPage: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -75,26 +76,9 @@ const CalendarPage: React.FC = () => {
       <div className="m-20">
         <MonthlyCalendar onEventClick={handleEventClick} />
       </div>
-      {/*<div className="mt-12 pl-40">
-        {events.length > 0 ? (
-          <ul>
-            {events.map((event, index) => (
-              <li
-                key={index}
-                className="mb-4 cursor-pointer hover:underline"
-                onClick={() => handleEventClick(event)}
-              >
-                <div className="text-lg font-semibold">{event.summary}</div>
-                <div>{new Date(event.start.dateTime).toLocaleString()}</div>
-                <div>{event.location}</div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No upcoming events found.</p>
-        )}
-      </div>*/}
-
+      <div className="m-20">
+        <MeetingMinutes />
+      </div>
       {selectedEvent && (
         <EventModal event={selectedEvent} isOpen={isModalOpen} onClose={closeModal} />
       )}
